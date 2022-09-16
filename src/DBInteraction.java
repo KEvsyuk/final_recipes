@@ -24,8 +24,8 @@ public class DBInteraction {
             ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE winter='TRUE' order by rand() limit 1");
 
             while (rs.next()) {
-                System.out.printf("Recipe name: %s, Winter: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\n",
-                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));
+                System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
+                        rs.getString(2), rs.getString(7), rs.getString(8), rs.getString(9));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -38,8 +38,8 @@ public class DBInteraction {
             ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE spring = 'TRUE' order by rand() limit 1");
 
             while (rs.next()) {
-                System.out.printf("Recipe name: %s, Spring: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\n",
-                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));
+                System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
+                        rs.getString(2), rs.getString(7), rs.getString(8), rs.getString(9));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -52,8 +52,8 @@ public class DBInteraction {
             ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE summer = 'TRUE' order by rand() limit 1");
 
             while (rs.next()) {
-                System.out.printf("Recipe name: %s, Summer: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\n",
-                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));
+                System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
+                        rs.getString(2), rs.getString(7), rs.getString(8), rs.getString(9));
             }
         } catch (Exception e) {
             System.out.println(e);
@@ -66,8 +66,8 @@ public class DBInteraction {
             ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE autumn = 'TRUE' order by rand() limit 1");
 
             while (rs.next()) {
-                System.out.printf("Recipe name: %s, Autumn: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\n",
-                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));
+                System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
+                        rs.getString(2), rs.getString(7), rs.getString(8), rs.getString(9));
             }
         } catch (Exception e) {
             System.out.println(e);

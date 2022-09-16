@@ -21,7 +21,7 @@ public class DBInteraction {
 
     public static void randomFromWinter(){
         try {
-            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE winter='TRUE' order by rand() limit 1");
+            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE winter=true order by rand() limit 1");
 
             while (rs.next()) {
                 System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
@@ -35,7 +35,7 @@ public class DBInteraction {
 
     public static void randomFromSpring(){
         try {
-            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE spring = 'TRUE' order by rand() limit 1");
+            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE spring = true order by rand() limit 1");
 
             while (rs.next()) {
                 System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
@@ -49,7 +49,7 @@ public class DBInteraction {
 
     public static void randomFromSummer(){
         try {
-            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE summer = 'TRUE' order by rand() limit 1");
+            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE summer = true order by rand() limit 1");
 
             while (rs.next()) {
                 System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
@@ -63,7 +63,7 @@ public class DBInteraction {
 
     public static void randomFromAutumn(){
         try {
-            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE autumn = 'TRUE' order by rand() limit 1");
+            ResultSet rs = connectToDB().executeQuery("SELECT * FROM recipes WHERE autumn = true order by rand() limit 1");
 
             while (rs.next()) {
                 System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",

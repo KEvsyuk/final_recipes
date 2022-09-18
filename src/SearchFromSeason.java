@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+//subclass, the values are read and shown to the user from the DBInteraction class
 public class SearchFromSeason {
     public static void main(String[] args) {
 

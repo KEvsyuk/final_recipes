@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="17d377f2-2908-4e84-905f-69975d01012c" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Random_option.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/RecipeInsertValues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBInteraction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main_recipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_recipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchFromSeason.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchFromSeason.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +46,28 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
   }
 }</component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main_recipes">
+    <configuration name="Main_recipes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main_recipes" />
+      <module name="final_recipes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Random_option" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Random_option" />
+      <module name="final_recipes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RecipeInsertValues" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RecipeInsertValues" />
+      <module name="final_recipes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SearchFromSeason" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="SearchFromSeason" />
       <module name="final_recipes" />
@@ -48,7 +77,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main_recipes" />
         <item itemvalue="Application.SearchFromSeason" />
+        <item itemvalue="Application.Random_option" />
+        <item itemvalue="Application.RecipeInsertValues" />
       </list>
     </recent_temporary>
   </component>

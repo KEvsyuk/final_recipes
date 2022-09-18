@@ -1,0 +1,157 @@
+Index: src/Main_recipes.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\nimport java.util.Scanner;\n\npublic class Main_recipes {\n    public static void main(String[] args) {\n\n        Scanner scanner = new Scanner (System.in);\n        \n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main_recipes.java b/src/Main_recipes.java
+--- a/src/Main_recipes.java	(revision 1d204e915129dbc0afc8ecd58e9857cb8cc90085)
++++ b/src/Main_recipes.java	(date 1663423209124)
+@@ -5,6 +5,6 @@
+     public static void main(String[] args) {
+ 
+         Scanner scanner = new Scanner (System.in);
+-        
++
+     }
+ }
+Index: src/DBInteraction.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>import java.sql.Connection;\nimport java.sql.DriverManager;\nimport java.sql.ResultSet;\nimport java.sql.Statement;\n\npublic class DBInteraction {\n\n\n    public static Statement connectToDB(){\n        try {\n            Class.forName(\"com.mysql.cj.jdbc.Driver\");\n            Connection con = DriverManager.getConnection(\"jdbc:mysql://localhost:3306/recipes_finalproject\", \"root\", \"AaaBbbCcc\");\n            Statement stmt = con.createStatement();\n            return stmt;\n\n        } catch (Exception e) {\n            System.out.println(e);\n        }\n        return null;\n    }\n\n    public static void randomFromWinter(){\n        try {\n            ResultSet rs = connectToDB().executeQuery(\"SELECT * FROM recipes WHERE winter='TRUE' order by rand() limit 1\");\n\n            while (rs.next()) {\n                System.out.printf(\"Recipe name: %s, Winter: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\\n\",\n                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));\n            }\n        } catch (Exception e) {\n            System.out.println(e);\n        }\n\n    }\n\n    public static void randomFromSpring(){\n        try {\n            ResultSet rs = connectToDB().executeQuery(\"SELECT * FROM recipes WHERE spring = 'TRUE' order by rand() limit 1\");\n\n            while (rs.next()) {\n                System.out.printf(\"Recipe name: %s, Spring: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\\n\",\n                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));\n            }\n        } catch (Exception e) {\n            System.out.println(e);\n        }\n\n    }\n\n    public static void randomFromSummer(){\n        try {\n            ResultSet rs = connectToDB().executeQuery(\"SELECT * FROM recipes WHERE summer = 'TRUE' order by rand() limit 1\");\n\n            while (rs.next()) {\n                System.out.printf(\"Recipe name: %s, Summer: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\\n\",\n                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));\n            }\n        } catch (Exception e) {\n            System.out.println(e);\n        }\n\n    }\n\n    public static void randomFromAutumn(){\n        try {\n            ResultSet rs = connectToDB().executeQuery(\"SELECT * FROM recipes WHERE autumn = 'TRUE' order by rand() limit 1\");\n\n            while (rs.next()) {\n                System.out.printf(\"Recipe name: %s, Autumn: %s, Ingredients: %s, Cooking time: %s, Instructions: %s\\n\",\n                        rs.getString(2), rs.getString(3), rs.getString(7), rs.getString(8),rs.getString(9));\n            }\n        } catch (Exception e) {\n            System.out.println(e);\n        }\n\n    }\n}\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/DBInteraction.java b/src/DBInteraction.java
+--- a/src/DBInteraction.java	(revision 1d204e915129dbc0afc8ecd58e9857cb8cc90085)
++++ b/src/DBInteraction.java	(date 1663345884024)
+@@ -9,7 +9,7 @@
+     public static Statement connectToDB(){
+         try {
+             Class.forName("com.mysql.cj.jdbc.Driver");
+-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/recipes_finalproject", "root", "AaaBbbCcc");
++            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/java31", "root", "26062004");
+             Statement stmt = con.createStatement();
+             return stmt;
+ 
+Index: src/Random_option.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Random_option.java b/src/Random_option.java
+new file mode 100644
+--- /dev/null	(date 1663423932222)
++++ b/src/Random_option.java	(date 1663423932222)
+@@ -0,0 +1,36 @@
++public class Random_option {
++    public static void main(String[] args) throws ClassNotFoundException, SQLException {
++
++        Scanner scanner = new Scanner(System.in);
++
++        System.out.println("What do you want to do? (r,t,n,s)");
++        System.out.println("r - find the recipe by random choice");
++        System.out.println("t - find a random recipe fallowing by season");
++        System.out.println("n - add a new recipe");
++        System.out.println("s - stop the program");
++        String choice = scanner.nextLine().toLowerCase();
++
++
++        if (choice.equals("r")){
++
++            try{
++
++                Class.forName("com.mysql.cj.jdbc.Driver");
++                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/recipes_finalproject", "root", "1234");
++                Statement stmt= con.createStatement();
++                ResultSet rs = stmt.executeQuery("SELECT * FROM recipes order by rand() limit 1;");
++
++                while (rs.next()){
++                    System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s \n",
++                            rs.getString(2), rs.getString(7), rs.getString(8), rs.getString(9));
++                }
++
++            } catch (Exception e){
++
++            }
++        }else {
++            System.out.println("Something went wrong");
++        }
++
++    }
++}
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<project version=\"4\">\n  <component name=\"ChangeListManager\">\n    <list default=\"true\" id=\"17d377f2-2908-4e84-905f-69975d01012c\" name=\"Changes\" comment=\"\">\n      <change afterPath=\"$PROJECT_DIR$/src/DBInteraction.java\" afterDir=\"false\" />\n      <change afterPath=\"$PROJECT_DIR$/src/SearchFromSeason.java\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/misc.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/misc.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\n      <change beforePath=\"$PROJECT_DIR$/final_recipes.iml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/final_recipes.iml\" afterDir=\"false\" />\n    </list>\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\n  </component>\n  <component name=\"FileTemplateManagerImpl\">\n    <option name=\"RECENT_TEMPLATES\">\n      <list>\n        <option value=\"Class\" />\n      </list>\n    </option>\n  </component>\n  <component name=\"Git.Settings\">\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\n  </component>\n  <component name=\"MarkdownSettingsMigration\">\n    <option name=\"stateVersion\" value=\"1\" />\n  </component>\n  <component name=\"ProjectId\" id=\"2EgLJXdoJdhWfF90N2mLU4c7LHC\" />\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\" />\n  <component name=\"ProjectViewState\">\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\n    <option name=\"showLibraryContents\" value=\"true\" />\n  </component>\n  <component name=\"PropertiesComponent\"><![CDATA[{\n  \"keyToString\": {\n    \"RunOnceActivity.OpenProjectViewOnStart\": \"true\",\n    \"RunOnceActivity.ShowReadmeOnStart\": \"true\",\n    \"last_opened_file_path\": \"C:/mySQL/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30.jar\",\n    \"project.structure.last.edited\": \"Modules\",\n    \"project.structure.proportion\": \"0.0\",\n    \"project.structure.side.proportion\": \"0.0\"\n  }\n}]]></component>\n  <component name=\"RunManager\">\n    <configuration name=\"SearchFromSeason\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\n      <option name=\"MAIN_CLASS_NAME\" value=\"SearchFromSeason\" />\n      <module name=\"final_recipes\" />\n      <method v=\"2\">\n        <option name=\"Make\" enabled=\"true\" />\n      </method>\n    </configuration>\n    <recent_temporary>\n      <list>\n        <item itemvalue=\"Application.SearchFromSeason\" />\n      </list>\n    </recent_temporary>\n  </component>\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\n  <component name=\"TaskManager\">\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\n      <changelist id=\"17d377f2-2908-4e84-905f-69975d01012c\" name=\"Changes\" comment=\"\" />\n      <created>1663012209748</created>\n      <option name=\"number\" value=\"Default\" />\n      <option name=\"presentableId\" value=\"Default\" />\n      <updated>1663012209748</updated>\n    </task>\n    <servers />\n  </component>\n  <component name=\"Vcs.Log.Tabs.Properties\">\n    <option name=\"TAB_STATES\">\n      <map>\n        <entry key=\"MAIN\">\n          <value>\n            <State />\n          </value>\n        </entry>\n      </map>\n    </option>\n  </component>\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 1d204e915129dbc0afc8ecd58e9857cb8cc90085)
++++ b/.idea/workspace.xml	(date 1663423932693)
+@@ -1,12 +1,14 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
++  <component name="AutoImportSettings">
++    <option name="autoReloadType" value="SELECTIVE" />
++  </component>
+   <component name="ChangeListManager">
+     <list default="true" id="17d377f2-2908-4e84-905f-69975d01012c" name="Changes" comment="">
+-      <change afterPath="$PROJECT_DIR$/src/DBInteraction.java" afterDir="false" />
+-      <change afterPath="$PROJECT_DIR$/src/SearchFromSeason.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/Random_option.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/final_recipes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/final_recipes.iml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/DBInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBInteraction.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/Main_recipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_recipes.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -23,39 +25,18 @@
+   <component name="Git.Settings">
+     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+   </component>
+-  <component name="MarkdownSettingsMigration">
+-    <option name="stateVersion" value="1" />
+-  </component>
+   <component name="ProjectId" id="2EgLJXdoJdhWfF90N2mLU4c7LHC" />
+   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+   <component name="ProjectViewState">
+     <option name="hideEmptyMiddlePackages" value="true" />
+     <option name="showLibraryContents" value="true" />
+   </component>
+-  <component name="PropertiesComponent"><![CDATA[{
+-  "keyToString": {
+-    "RunOnceActivity.OpenProjectViewOnStart": "true",
+-    "RunOnceActivity.ShowReadmeOnStart": "true",
+-    "last_opened_file_path": "C:/mySQL/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30.jar",
+-    "project.structure.last.edited": "Modules",
+-    "project.structure.proportion": "0.0",
+-    "project.structure.side.proportion": "0.0"
++  <component name="PropertiesComponent">{
++  &quot;keyToString&quot;: {
++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
+   }
+-}]]></component>
+-  <component name="RunManager">
+-    <configuration name="SearchFromSeason" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="SearchFromSeason" />
+-      <module name="final_recipes" />
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.SearchFromSeason" />
+-      </list>
+-    </recent_temporary>
+-  </component>
++}</component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">

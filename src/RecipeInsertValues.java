@@ -96,7 +96,7 @@ public class RecipeInsertValues {
         }
     }
 
-    private static void insertData(Connection conn, String RecipeName, boolean winter, boolean spring, boolean summer, boolean autumn, String Ingredients, String CookingTime, String Instructions) throws SQLException {
+    public static void insertData(Connection conn, String RecipeName, boolean winter, boolean spring, boolean summer, boolean autumn, String Ingredients, String CookingTime, String Instructions) throws SQLException {
 
         String sql = "INSERT INTO recipes (RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = conn.prepareStatement(sql);

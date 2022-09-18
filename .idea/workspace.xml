@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17d377f2-2908-4e84-905f-69975d01012c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Random_option.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/RecipeInsertValues.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/final_recipes.iml" beforeDir="false" afterPath="$PROJECT_DIR$/final_recipes.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBInteraction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main_recipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_recipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/SearchFromSeason.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SearchFromSeason.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Random_option.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RecipeInsertValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecipeInsertValues.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,17 +36,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/mySQL/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30.jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "last_opened_file_path": "C:/mySQL/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30/mysql-connector-java-8.0.30.jar",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Main_recipes">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="final_recipes" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main_recipes" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main_recipes" />
       <module name="final_recipes" />
@@ -79,6 +86,7 @@
       <list>
         <item itemvalue="Application.Main_recipes" />
         <item itemvalue="Application.SearchFromSeason" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Random_option" />
         <item itemvalue="Application.RecipeInsertValues" />
       </list>

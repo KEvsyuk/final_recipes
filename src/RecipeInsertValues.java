@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class RecipeInsertValues {
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        String dbURL = "jdbc:mysql://localhost:3306/java31";
+        String dbURL = "jdbc:mysql://localhost:3306/recipes_finalproject";
         String username = "root";
         String password = "26062004";
 

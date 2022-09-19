@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="17d377f2-2908-4e84-905f-69975d01012c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DBInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBInteraction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main_recipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_recipes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RecipeInsertValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecipeInsertValues.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +44,7 @@
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Main_recipes">
+  <component name="RunManager" selected="Application.RecipeInsertValues">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="final_recipes" />
@@ -80,11 +82,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.RecipeInsertValues" />
         <item itemvalue="Application.Main_recipes" />
         <item itemvalue="Application.SearchFromSeason" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Random_option" />
-        <item itemvalue="Application.RecipeInsertValues" />
       </list>
     </recent_temporary>
   </component>

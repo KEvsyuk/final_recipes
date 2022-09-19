@@ -99,7 +99,7 @@ try {
             System.out.println(e);
         }
 
-        String sql = "INSERT INTO recipes (RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO recipes (RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";}}
         /*PreparedStatement statement = con.prepareStatement(sql);
         //replace question marks
         statement.setString(1, RecipeName);

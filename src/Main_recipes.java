@@ -1,4 +1,4 @@
-import java.sql.*;
+ /* import java.sql.*;
 import java.util.Scanner;
 
 public class Main_recipes {
@@ -121,3 +121,4 @@ public class Main_recipes {
             }
     }
 }
+*/

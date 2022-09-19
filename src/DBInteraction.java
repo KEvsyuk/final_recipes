@@ -100,7 +100,7 @@ try {
         }
 
         String sql = "INSERT INTO recipes (RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
-        PreparedStatement statement = con.prepareStatement(sql);
+        /*PreparedStatement statement = con.prepareStatement(sql);
         //replace question marks
         statement.setString(1, RecipeName);
         statement.setString(2, String.valueOf(winter));
@@ -123,3 +123,4 @@ try {
 
     }
 }
+*/

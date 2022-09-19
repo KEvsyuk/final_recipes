@@ -33,13 +33,14 @@ public class Main_recipes {
                             System.out.printf("Recipe: %s\n Ingredients:%s\n Cooking time: %s\n Instructions (in the link): %s\n",
                                     rs.getString(2), rs.getString(7), rs.getString(8), rs.getString(9));
                         }
-                        break;
+                    System.out.println("Do you want to do anything else? (y/n)");
+                    again = scanner.nextLine().toLowerCase().trim();
                 } else
 
                 // random by season
                 if (choice.equals("t")) {
                     SearchFromSeason.randomRecipe();
-                    System.out.println("Enter the season (w - winter, sp - spring, sum - summer, a - autumn): ");
+                    /* System.out.println("Enter the season (w - winter, sp - spring, sum - summer, a - autumn): ");
                     String season = scanner.nextLine().trim().toLowerCase();
 
                     DBInteraction dbInteraction = new DBInteraction();
@@ -54,8 +55,9 @@ public class Main_recipes {
                         dbInteraction.randomFromAutumn();
                     } else {
                     System.out.println("Enter the correct season");
-                }
-                    break;
+                }*/
+                    System.out.println("Do you want to do anything else? (y/n)");
+                    again = scanner.nextLine().toLowerCase().trim();
                 }else
 
                 //add a new recipe
@@ -89,7 +91,7 @@ public class Main_recipes {
                     }
 
                     System.out.println("Enter the ingredients, for example: flour, milk, chicken, etc.");
-                    String Ingredients = scanner.nextLine();
+                    String Ingridients = scanner.nextLine();
 
                     //limitation 0-59
                     //minutes in while loop
@@ -108,14 +110,16 @@ public class Main_recipes {
                     //doubles line?
                     System.out.println("Enter a valid link for instructions (starting from https://)");
                     String Instructions = scanner.nextLine();
-                    while (!Instructions.contains("https")){
-                        System.out.println("Something went wrong");
+                    if (Instructions.contains("https")){
+                        RecipeInsertValues.insertData(con, RecipeName, winter, spring, summer, autumn, Ingridients, CookingTime, Instructions);
+                    }else{
+                        System.out.println("A valid link should contain 'https://'");
                         Instructions = scanner.nextLine();
                     }
 
-                    RecipeInsertValues.insertData(con, RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions);
+                    RecipeInsertValues.insertData(con, RecipeName, winter, spring, summer, autumn, Ingridients, CookingTime, Instructions);
 
-        String sql = "INSERT INTO recipes (RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO recipes (Recipe name, winter, spring, summer, autumn, Ingridients, CookingTime, Instructions) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
         PreparedStatement statement = con.prepareStatement(sql);
         //replace question marks
         statement.setString(1, RecipeName);
@@ -123,7 +127,7 @@ public class Main_recipes {
         statement.setString(3, String.valueOf(spring));
         statement.setString(4, String.valueOf(summer));
         statement.setString(5, String.valueOf(autumn));
-        statement.setString(6, Ingredients);
+        statement.setString(6, Ingridients);
         statement.setString(7, CookingTime);
         statement.setString(8, Instructions);
 
@@ -135,7 +139,8 @@ public class Main_recipes {
         } else {
             System.out.println("Something was wrong");
         }
-                break;
+                    System.out.println("Do you want to do anything else? (y/n)");
+                    again = scanner.nextLine().toLowerCase().trim();
                 }
 
                 //stop the program
@@ -143,8 +148,8 @@ public class Main_recipes {
                     System.out.println("Please, choose an option from the list");
                     choice = scanner.nextLine().trim().toLowerCase();
                 }
-                System.out.println("Do you want to do anything else? (y/n)");
-                again = scanner.nextLine().toLowerCase().trim();
+
+                 //stop the program
                 /*if (choice.equals("s")){
                     System.exit(0);
                 }*/

@@ -23,17 +23,14 @@ public class Main_recipes {
 
                 // random by season
                 if (choice.equals("t")) {
-                    SearchFromSeason.randomRecipe();
+                    randomRecipe();
 
                 }else
 
                 //add a new recipe
                 if (choice.equals("n")) {
                     addRecipe();
-                }
-
-
-                 else if (choice.equals("s")){
+                } else if (choice.equals("s")){
                     System.exit(0);
                 }else {
                     System.out.println("Please, choose an option from the list");
@@ -81,7 +78,7 @@ public class Main_recipes {
         //minutes in while loop
         //reg expression
         //2 variables to put in one and then send to database
-        System.out.println("Enter cooking hours");
+        System.out.println("Enter cooking hours (in digits)");
         int hours = scanner.nextInt();
         int min;
         do {
@@ -93,6 +90,7 @@ public class Main_recipes {
 
         //doubles line?
         System.out.println("Enter a valid link for instructions (starting from https://)");
+        scanner.nextLine();
         String Instructions = scanner.nextLine();
         if (Instructions.contains("https")){
             DBInteraction.insertData(RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions);
@@ -103,4 +101,25 @@ public class Main_recipes {
 
         //DBInteraction.insertData(RecipeName, winter, spring, summer, autumn, Ingredients, CookingTime, Instructions);
     }
+
+    public static void randomRecipe() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter the season (w - winter, sp - spring, sum - summer, a - autumn): ");
+
+        String season = scanner.nextLine();
+
+        DBInteraction dbInteraction = new DBInteraction();
+
+        if (season.equals("w")){
+            dbInteraction.randomFromWinter();
+        } else if (season.equals("sp")){
+            dbInteraction.randomFromSpring();
+        } else if (season.equals("sum")) {
+            dbInteraction.randomFromSummer();
+        } else if (season.equals("a")) {
+            dbInteraction.randomFromAutumn();
+        }
+    }
 }
+
+

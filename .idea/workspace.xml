@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17d377f2-2908-4e84-905f-69975d01012c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_09_2022__18_37__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_16_09_2022__18_37__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022__17_15__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_17_09_2022__17_15__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DBInteraction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DBInteraction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main_recipes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main_recipes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/RecipeInsertValues.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/RecipeInsertValues.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/RecipeInsertValues.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/SearchFromSeason.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

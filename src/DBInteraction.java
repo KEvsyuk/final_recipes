@@ -5,8 +5,7 @@ public class DBInteraction {
     public static Connection connectToDB() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/recipes_finalproject", "root", "AaaBbbCcc");
-            Statement stmt = con.createStatement();
+            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/recipes_finalproject", "root", "26062004");
             return con;
 
         } catch (Exception e) {
